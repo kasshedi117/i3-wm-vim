@@ -13,11 +13,12 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
+font pango:Cantarell 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -93,28 +94,28 @@ bindsym $mod+q focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
-bindsym $mod+quotedbl workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft workspace 5
-bindsym $mod+minus workspace 6
-bindsym $mod+egrave workspace 7
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym $mod+ampersand  workspace $workspace1
+bindsym $mod+eacute     workspace $workspace2
+bindsym $mod+quotedbl   workspace $workspace3
+bindsym $mod+apostrophe workspace $workspace4
+bindsym $mod+parenleft  workspace $workspace5
+bindsym $mod+minus      workspace $workspace6
+bindsym $mod+egrave     workspace $workspace7
+bindsym $mod+underscore workspace $workspace8
+bindsym $mod+ccedilla   workspace $workspace9
+bindsym $mod+agrave     workspace $workspace10
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace 1
-bindsym $mod+Shift+eacute move container to workspace 2
-bindsym $mod+Shift+quotedbl move container to workspace 3
-bindsym $mod+Shift+apostrophe move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+minus move container to workspace 6
-bindsym $mod+Shift+egrave move container to workspace 7
-bindsym $mod+Shift+underscore move container to workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10
+bindsym $mod+Shift+ampersand        move container to workspace $workspace1
+bindsym $mod+Shift+eacute           move container to workspace $workspace2
+bindsym $mod+Shift+quotedbl         move container to workspace $workspace3
+bindsym $mod+Shift+apostrophe       move container to workspace $workspace4
+bindsym $mod+Shift+parenleft        move container to workspace $workspace5
+bindsym $mod+Shift+minus            move container to workspace $workspace6
+bindsym $mod+Shift+egrave           move container to workspace $workspace7
+bindsym $mod+Shift+underscore       move container to workspace $workspace8
+bindsym $mod+Shift+ccedilla         move container to workspace $workspace9
+bindsym $mod+Shift+agrave           move container to workspace $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -122,6 +123,18 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+
+set $workspace1 "1:Web "
+set $workspace2 "2:Terminal "
+set $workspace3 "3:File Manager "
+set $workspace4 "4:Music "
+set $workspace5 "5:Video "
+set $workspace6 "6:Game "
+set $workspace7 "7:Email "
+set $workspace8 "8:Work "
+set $workspace9 "9:Misc "
+set $workspace10 "10:Spotify "
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
